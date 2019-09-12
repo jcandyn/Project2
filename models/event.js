@@ -41,9 +41,8 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: "General"
       },
     });
-    User.associate = function (models) {
-        models.User.belongsTo(models.User, {
-          onDelete: "CASCADE",
+    Event.associate = function (models) {
+        Event.belongsTo(models.User, {
           foreignKey: {
             allowNull: false
           }
