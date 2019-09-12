@@ -35,12 +35,13 @@ module.exports = function (sequelize, Datatypes) {
         }
     });
 
-    User.associate = function(models) {
+    User.associate = function (models) {
         User.belongsTo(models.Event, {
             foreignKey: {
                 onDelete: "cascade",
             }
         })
     };
+
     return User;
 };
