@@ -1,35 +1,31 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
-
-// Sets up the Express App
-// =============================================================
+// server.js
+// load the things we need
+var express = require('express');
 var app = express();
-var PORT = process.env.PORT || 8080;
 
-// Requiring our models for syncing
-var db = require("./models/app");
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// use res.render to load up an ejs view file
 
-// Static directory
-app.use(express.static("public"));
+// index page 
+app.get('/', function(req, res) {
+    var drinks = [
+      {name: "soda", brand: "pepsi"},
+      {name: "soda", brand: "coke"},
+      {name: "soda", brand: "fanta"},
+    ];
+    var tagline = "code code code";
 
-// Routes
-// =============================================================
-require("./routes/api-routes")(app);
-// require("./routes/html-routes.js")(app);
-
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+    res.render('pages/index', {
+      drinks: drinks,
+      tagline: tagline
+    });
 });
+
+app.get('/about', function(req, res) {
+  res.render('pages/about');
+});
+
+app.listen(8080);
+console.log('8080 is the magic port');
