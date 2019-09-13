@@ -10,6 +10,8 @@
 // =============================================================
 var express = require("express");
 var path = require('path');
+var PORT = process.env.PORT || 8080;
+var app = express();
 
 // Sets up the Express App
 // =============================================================
@@ -36,7 +38,7 @@ app.get('/', function(req, res) {
 var db = require("./models/app");
 
 
-app.use(require('./routes'));
+// app.use(require('./routes'));
 app.use(express.static('public'));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -53,8 +55,8 @@ app.use(express.json());
 require("./routes/api-routes")(app);
 require("./routes/html-routes.js")(app);
 
-Syncing our sequelize models and then starting our Express app
-=============================================================
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
