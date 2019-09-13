@@ -1,7 +1,7 @@
 module.exports = function (sequelize, Datatypes) {
     var User = sequelize.define("User", {
         id: {
-            type: Sequelize.INTEGER,
+            type: Datatypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
@@ -36,10 +36,8 @@ module.exports = function (sequelize, Datatypes) {
     });
 
     User.associate = function (models) {
-        User.belongsTo(models.Event, {
-            foreignKey: {
-                onDelete: "cascade",
-            }
+        User.hasMany(models.Event, {
+                onDelete: "cascade"
         })
     };
 
