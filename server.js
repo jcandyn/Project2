@@ -9,7 +9,10 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-// var path = require('path');
+
+var path = require('path');
+var PORT = process.env.PORT || 8080;
+var app = express();
 
 
 // Sets up the Express App
@@ -37,7 +40,7 @@ app.get('/', function(req, res) {
 var db = require("./models/app");
 
 
-app.use(require('./routes'));
+// app.use(require('./routes'));
 app.use(express.static('public'));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
