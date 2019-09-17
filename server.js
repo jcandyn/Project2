@@ -1,4 +1,3 @@
-
 // server.js
 // load the things we need
 
@@ -11,7 +10,11 @@
 var express = require("express");
 var path = require('path');
 var PORT = process.env.PORT || 8080;
+var session = require("express-session");
 var app = express();
+var db = require("./models");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
@@ -19,34 +22,28 @@ var app = express();
 
 
 // set the view engine to ejs
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 // use res.render to load up an ejs view file
 
 // index page 
-app.get('/', function(req, res) {
-  var drinks = [
-      { name: 'Bloody Mary', drunkness: 3 },
-      { name: 'Martini', drunkness: 5 },
-      { name: 'Scotch', drunkness: 10 }
-  ];
-  var tagline = "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else.";
+// app.get('/', function(req, res) {
 
-  res.render('pages/index', {
-      drinks: drinks,
-      tagline: tagline
-  });
+// });
+
+app.get("/", function(req, res) {
+  // If the user already has an account send them to the members page
+  if (req.user) {
+    res.redirect("/members");
+  }
+  res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
 });
-
-// about page 
-app.get('/about', function(req, res) {
-  res.render('pages/about');
+//
+// create account page 
+app.get('/createaccount', function(req, res) {
+  res.render('pages/createaccount');
 });
-
-
-
 // Requiring our models for syncing
-var db = require("./models/app");
 
 
 // app.use(require('./routes'));
@@ -54,6 +51,11 @@ app.use(express.static('public'));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
@@ -73,6 +75,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
 
 
 
