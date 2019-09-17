@@ -15,7 +15,7 @@ module.exports = function (sequelize, Datatypes) {
                 ],
             }
         },
-        user_password: {
+        password: {
             type: Datatypes.STRING,
             allowNull: false,
             validate: {
