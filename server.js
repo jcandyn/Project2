@@ -1,4 +1,3 @@
-
 // server.js
 // load the things we need
 
@@ -40,14 +39,11 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
 });
 //
-
-
-
-
+// create account page 
+app.get('/createaccount', function(req, res) {
+  res.render('pages/createaccount');
+});
 // Requiring our models for syncing
-
-
-
 
 
 // app.use(require('./routes'));
@@ -79,6 +75,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
 
 
 
