@@ -4,10 +4,17 @@ const path    = require('path');
 
 module.exports = function(app) {
 
-    
-    app.get('/', (req, res) => {
-        res.sendFile( path.join( __dirname,'../public/testing.html' ));
+    app.get('/', function(req, res) {
+        res.render('pages/index', {
+        });
     });
+
+    app.get('/signup', function(req, res) {
+        res.render('/pages/signup')
+    })
+
+
+    
     
 }
 
