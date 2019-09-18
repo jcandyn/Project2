@@ -15,24 +15,24 @@ module.exports = function (sequelize, Datatypes) {
                 notContains: [
                     "fuck", "shit", "bitch", "ass", "phuk", "fuk", "sheit", "sheeeit", "shat", "schit", "shitt", "biiiiitch", "betch", "bich"
                 ]
-        }
-            },
+            }
+        },
         name: {
             type: Datatypes.STRING,
             allowNull: false,
             validate: {
-              len: [1]
+                len: [1]
             }
-          },
+        },
         email: {
             type: Datatypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-             isEmail: true,
-              len: [1]
+                isEmail: true,
+                len: [1]
             }
-          },
+        },
         password: {
             type: Datatypes.STRING,
             allowNull: false,
@@ -53,27 +53,28 @@ module.exports = function (sequelize, Datatypes) {
         }
     });
 
-    User.prototype.validPassword = function(password) {
+
+    User.prototype.validPassword = function (password) {
         return bcrypt.compareSync(password, this.password);
-      };
-//       // Hooks are automatic methods that run during various phases of the User Model lifecycle
-//       // In this case, before a User is created, we will automatically hash their password
-    
-//   User.hook("beforeCreate", function(user) {
-//     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-//   });
-User.beforeCreate(user => {
-   user.password = bcrypt.hashSync(
-     user.password,
-      bcrypt.genSaltSync(10),
-      null
-    );
-  });
+    };
+    //       // Hooks are automatic methods that run during various phases of the User Model lifecycle
+    //       // In this case, before a User is created, we will automatically hash their password
+
+    //   User.hook("beforeCreate", function(user) {
+    //     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    //   });
+    User.beforeCreate(user => {
+        user.password = bcrypt.hashSync(
+            user.password,
+            bcrypt.genSaltSync(10),
+            null
+        );
+    });
 
     User.associate = function (models) {
         User.hasMany(models.Event, {
-                onDelete: "cascade",
-                
+            onDelete: "cascade",
+
         })
     };
 
