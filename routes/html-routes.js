@@ -1,4 +1,3 @@
-
 // const router  = express.Router();
 const path    = require('path');
 
@@ -13,7 +12,7 @@ module.exports = function(app) {
             res.redirect("/members");
           }
 
-          res.render(path.join(__dirname, "../views/pages/signUp.ejs"));
+          res.render(path.join(__dirname, "../views/pages/index.ejs"));
 
         });
       
@@ -22,13 +21,17 @@ module.exports = function(app) {
           if (req.user) {
             res.redirect("/members");
           }
-          res.sendFile(path.join(__dirname, "../public/login.html"));
+          res.render(path.join(__dirname, "../views/pages/login.ejs"));
         });
       
         // Here we've add our isAuthenticated middleware to this route.
         // If a user who is not logged in tries to access this route they will be redirected to the signup page
         app.get("/members", isAuthenticated, function(req, res) {
-          res.sendFile(path.join(__dirname, "../public/members.html"));
+          res.render(path.join(__dirname, "../public/members.html"));
+        });
+
+        app.get("/signUp", function(req, res) {
+          res.render(path.join(__dirname, "../views/pages/signUp.ejs"));
         });
 
      
