@@ -31,6 +31,7 @@ var passport = require("./config/passport");
 
 // });
 
+
 // app.get("/", function(req, res) {
 //   // If the user already has an account send them to the members page
 //   if (req.user) {
@@ -43,6 +44,20 @@ var passport = require("./config/passport");
 // app.get('/createaccount', function(req, res) {
 //   res.render('pages/createaccount');
 // });
+
+app.get("/", function(req, res) {
+  // If the user already has an account send them to the members page
+  if (req.user) {
+    res.redirect("/members");
+  }
+  res.sendFile(path.join(__dirname, "../Project2/public/createEvent.html"));
+});
+//
+// create account page 
+app.get('/createaccount', function(req, res) {
+  res.render('pages/createaccount');
+});
+
 // Requiring our models for syncing
 
 

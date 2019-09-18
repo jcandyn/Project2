@@ -12,7 +12,9 @@ module.exports = function(app) {
           if (req.user) {
             res.redirect("/members");
           }
+
           res.render(path.join(__dirname, "../views/pages/signUp.ejs"));
+
         });
       
         app.get("/login", function(req, res) {
@@ -28,6 +30,8 @@ module.exports = function(app) {
         app.get("/members", isAuthenticated, function(req, res) {
           res.sendFile(path.join(__dirname, "../public/members.html"));
         });
+
+     
 }
 
 // router.get('/survey', (req, res) => {
