@@ -1,4 +1,4 @@
-<!-- views/pages/login.ejs -->
+<!-- views/pages/createEvent.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,54 +14,60 @@
     </header>
 
     <main>
-            <div class="container">
-                    <div class="row">
-                      <div class="col">
-                        <form>
-                          <div class="form-group" id="eventTitle_form">
+        <div class="jumbotron" id="eventForm">
+        <div class="container">
+            <div class="row">
+               <h1> Now let's make some buzz !!</h1>
+                <div class="col">
+                    <form>
+                        <div class="form-group" id="eventTitle_form">
                             <label for="event-title">Title</label>
                             <input type="text" class="form-control" id="event-title" aria-describedby="emailHelp"
-                              placeholder="Name of event">
-                          </div>
-                          <div class="form-group" id="eventTime_form">
+                                placeholder="Make a cool name for your event!">
+                        </div>
+                        <div class="form-group" id="eventTime_form">
                             <label for="event-time">Time:</label>
                             <input type="text" class="form-control" id="event-time" aria-describedby="emailHelp"
-                              placeholder="Tell us what the event is about">
-                          </div>
-                          <div class="form-group" id="eventLocation_form">
+                                placeholder="What time will the event be held?">
+                        </div>
+                        <div class="form-group" id="eventLocation_form">
                             <label for="event-location">Location:</label>
                             <input type="text" class="form-control" id="event-location" aria-describedby="emailHelp"
-                              placeholder="Address">
-                          </div>
-                          <div class="form-group">
+                                placeholder="Now lets give an address for your event.">
+                        </div>
+                        <div class="form-group">
                             <label for="event-desc">Description:</label>
-                            <textarea class="form-control" id="event-desc" rows="3"></textarea>
-                          </div>
-                          <div class="form-group">
+                            <textarea class="form-control" id="event-desc" rows="3" placeholder= "In order to churn up some buzz, tell uswhat the event is about."></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="event-category">Category:</label>
                             <select class="form-control" id="event-category">
-                              <option>Volunteer</option>
-                              <option>Education</option>
-                              <option>Charity</option>
-                              <option>Party</option>
-                              <option>Sports</option>
+                                <option>Volunteer</option>
+                                <option>Education</option>
+                                <option>Charity</option>
+                                <option>Party</option>
+                                <option>Sports</option>
                             </select>
-                          </div>
-                          
-                          <div class="form-group">
+                        </div>
+
+                        <div class="form-group">
                             <label for="event-date">Date:</label>
                             <input type="text" class="form-control" id="event-date" aria-describedby="emailHelp"
-                              placeholder="mm/dd/yyyy">
-                          </div>
-                
-                          <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
+                                placeholder="mm/dd/yyyy">
+                        </div>
+
+                        <button type="button" class="btn btn-warning btn-lg" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- did you guys want to put an invisible container that will populate similar events after the user creates one, or maybe a confirm div that the event has been create? -->
+        <div class="container filler2" id=“eventCreatedResults”>
+            <div id="showEvents" id="showConfirmation">
+            </div>
+        </div>
     </main>
-
-
 
     <footer>
         <% include ../partials/footer %>
