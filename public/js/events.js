@@ -26,6 +26,7 @@ $(document).ready(function () {
     };
 
     $("#submit").on("click", function (event) {
+      
         event.preventDefault();
 
         var newEventTitle = $("#event-title").val().trim();

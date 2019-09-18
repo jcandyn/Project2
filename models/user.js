@@ -71,13 +71,13 @@ module.exports = function (sequelize, Datatypes) {
         );
     });
 
-    User.associate = function (models) {
-        User.hasMany(models.Event, {
-            onDelete: "cascade",
+    // User.associate = function (models) {
+    //     User.hasMany(models.Event, {
+    //         onDelete: "cascade",
 
-        })
-    };
-
+    //     })
+    // };
+// 
     return User;
 };
 
