@@ -50,7 +50,7 @@ app.get("/", function(req, res) {
   if (req.user) {
     res.redirect("/members");
   }
-  res.sendFile(path.join(__dirname, "../Project2/public/createEvent.html"));
+  res.render(path.join(__dirname, "../Project2/views/pages/createEvent.ejs"));
 });
 //
 // create account page 
