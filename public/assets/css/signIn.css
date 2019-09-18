@@ -1,0 +1,37 @@
+/* body {
+    background-color: yellow;
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: grid;
+    height: 400px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: lightblue;
+    justify-items: center;
+    align-items: center;
+}
+
+.signUpContainer {
+    width: 50%;
+    height: 50%;
+    background-color: palegoldenrod;
+    border: 2px solid darkgray;
+    align-items: center;
+}
+
+.formContent {
+    display: grid;
+    justify-content: center;
+    align-content: center; 
+    margin-top: 50px;
+} 
+
+/* @media screen and (max-width: 600px) {
+    
+} */

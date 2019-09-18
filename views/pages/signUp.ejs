@@ -1,30 +1,40 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
-
+<html lang="en-US">
 <head>
     <% include ../partials/head.ejs %>
+    <title>Sign Up</title>
 </head>
-
 <body>
 
-    <form>
-        <input type="text" placeholder="Search Events">
-        <button id="searchButton" type="submit"><i
-                class= "fas fa-search">
-            </i></button>
-    </form>
+    <!-- <% include ../partials/header.ejs %> -->
 
-
-    <% include ../partials/header.ejs %>
-
+<div class="container">
+    <div class="row">
+    <div class="col">
+            <form>
+                    <div class="form-group" id="usernameSign_up_form">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="usernameSign_up" aria-describedby="emailHelp" placeholder="Username">
+                          </div>
+                          <div class="form-group" id="nameSign_up_form">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" id="nameSign_up" aria-describedby="emailHelp" placeholder="Name">
+                              </div>
+            <div class="form-group" id="emailSign_up_form">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="emailSign_up" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group" id="passwordSign_up_form">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" autocomplete="password" id="passwordSign_up" placeholder="Password">
+            </div>
+            <button type="submit" id="signUpBtn" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    </div>
+    </div>
     <footer> <% include ../partials/footer %>
     </footer>
-
+    <script src="js/signUp.js"></script>
 </body>
-
 </html>
