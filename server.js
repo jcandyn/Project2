@@ -36,7 +36,7 @@ app.get("/", function(req, res) {
   if (req.user) {
     res.redirect("/members");
   }
-  res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
+  res.sendFile(path.join(__dirname, "../Project2/public/createEvent.html"));
 });
 //
 // create account page 
