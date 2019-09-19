@@ -1,109 +1,47 @@
-<!-- views/pages/signUp.ejs -->
-
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-    <% include ../partials/head %>
+  <% include ../partials/head.ejs %>
+  <title>Sign Up</title>
 </head>
 
-<body class="container">
+<body>
 
-    <header>
-        <% include ../partials/header %>
-    </header>
+  <% include ../partials/header.ejs %>
 
-    <main>
-       
-        <div class="row">
-            <div class="col-md-6" id="suDiv1">
-                <div class="jumbotron" id="suDiv1">
-                    <h1>Hive Builder</h1>
-                    <!-- input <href= images/logo/logo.png -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-group" id="usernameSign_up_form">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" class="form-control" id="usernameSign_up" aria-describedby="emailHelp"
+              placeholder="Username">
+          </div>
+          <div class="form-group" id="nameSign_up_form">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" id="nameSign_up" aria-describedby="emailHelp" placeholder="Name">
+          </div>
+          <div class="form-group" id="emailSign_up_form">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="emailSign_up" aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group" id="passwordSign_up_form">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" autocomplete="password" id="passwordSign_up"
+              placeholder="Password">
+          </div>
+          <button type="submit" id="signUpBtn" class="btn btn-primary">Submit</button>
+        </form>
 
-                    <p class="aboutUs">
-                        Welcome to Hive Builder! A user friendly interface where users can create events for all
-                        occasions.
-                        Whether you’re planning a local fair or conference, we provide the perfect platform to get your
-                        event out and offer sign-up lists for your event.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="jumbotron">
-                    <h4> Dont be a lonely bee....</h4>
-                    <h2>Join the Hive today!</h2>
-                    <p class="userData">
-                            <div class="container">
-                                    <div class="row">
-                                    <div class="col">
-                                            <form>
-                                                    <div class="form-group" id="usernameSign_up_form">
-                                                            <label for="exampleInputEmail1">Username</label>
-                                                            <input type="text" class="form-control" id="usernameSign_up" aria-describedby="emailHelp" placeholder="Username">
-                                                          </div>
-                                                          <div class="form-group" id="nameSign_up_form">
-                                                                <label for="exampleInputEmail1">Name</label>
-                                                                <input type="text" class="form-control" id="nameSign_up" aria-describedby="emailHelp" placeholder="Name">
-                                                              </div>
-                                            <div class="form-group" id="emailSign_up_form">
-                                              <label for="exampleInputEmail1">Email address</label>
-                                              <input type="email" class="form-control" id="emailSign_up" aria-describedby="emailHelp" placeholder="Enter email">
-                                              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                            </div>
-                                            <div class="form-group" id="passwordSign_up_form">
-                                              <label for="exampleInputPassword1">Password</label>
-                                              <input type="password" class="form-control" autocomplete="password" id="passwordSign_up" placeholder="Password">
-                                            </div>
-                                            <button type="submit" id="signUpBtn" class="btn btn-primary">Submit</button>
-                                          </form>
-                                    </div>
-                                    </div>
-                                    </div>
-    </main>
-    <!-- Thanks for signing up Modal -->
-    <!-- <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modal-title">Thanks for joining the Hive!</h2>
-                    <h3 class="nextStepModal"> Now let's start making some buzz...</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="welcome-body">
-                    <img src="public/images/modal/goodmodal.gif" alt="happy bees">
-                </div>
-
-            </div>
-        </div>
-    </div> -->
-    <!-- Invalid Form Modal -->
-    <!-- <div class="modal fade" id="invalid-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title invalid-title">Opps Invalid Form</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="invalid-body">
-                    Please Fill Out All Form Data
-                    <img src="public/images/modal/badmodal.gif" alt="sad bee">
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <footer>
-        <% include ../partials/footer %>
-    </footer>
-    
+      </div>
+    </div>
+  </div>
+  <footer> <% include ../partials/footer %>
+  </footer>
+  <script src="js/signUp.js"></script>
 </body>
 
 </html>
-
