@@ -1,4 +1,5 @@
 var bcrypt = require("bcryptjs");
+
 module.exports = function (sequelize, Datatypes) {
     var User = sequelize.define("User", {
         id: {
@@ -44,11 +45,11 @@ module.exports = function (sequelize, Datatypes) {
             }
         },
         user_identifier: {
-            type: Datatypes.INTEGER,
+            type: Datatypes.BIGINT,
             allowNull: false,
             validate: {
                 isInt: true,
-                len: [10, 10]
+                len: [8, 12]
             }
         }
     });
@@ -71,13 +72,12 @@ module.exports = function (sequelize, Datatypes) {
         );
     });
 
-    // User.associate = function (models) {
-    //     User.hasMany(models.Event, {
-    //         onDelete: "cascade",
-
-    //     })
-    // };
-
+    User.associate = function (models) {
+        User.hasMany(models.Event, {
+            onDelete: "cascade",
+        })
+    };
+// 
     return User;
 };
 

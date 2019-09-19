@@ -54,15 +54,17 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "General"
     },
+    // UserID:{
+    //   //fk in user table
+    //   type: DataTypes.INTEGER,
+    //   required: true,
+    //   allowNull: false
+    // }
   });
 
-  // Event.associate = function (models) {
-  //   Event.belongsTo(models.User, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
+  Event.associate = function (models) {
+    Event.belongsTo(models.User);
+  };
 
   return Event;
 };
