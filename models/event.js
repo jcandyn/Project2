@@ -15,15 +15,29 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     },
+    // time: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
     time: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
+    // date: {
+    //   type: DataTypes.DATEONLY,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }
+    // },
     date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
@@ -42,13 +56,13 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Event.associate = function (models) {
-    Event.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Event.associate = function (models) {
+  //   Event.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Event;
 };

@@ -1,4 +1,3 @@
-
 // server.js
 // load the things we need
 
@@ -37,17 +36,32 @@ var passport = require("./config/passport");
 //   if (req.user) {
 //     res.redirect("/members");
 //   }
-//   res.render(path.join(__dirname, "/views/pages/signUp.ejs"));
+//   res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
 // });
+// //
+// // create account page 
+// app.get('/createaccount', function(req, res) {
+//   res.render('pages/createaccount');
+// });
+
+app.get("/", function(req, res) {
+  // If the user already has an account send them to the members page
+  if (req.user) {
+    res.redirect("/members");
+  }
+  // res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
+
+  res.render(path.join(__dirname, "../Project2/views/pages/signUp.ejs"));
+
+});
+
 //
-
-
-
+// create account page 
+app.get('/createaccount', function(req, res) {
+  res.render('pages/createaccount');
+});
 
 // Requiring our models for syncing
-
-
-
 
 
 // app.use(require('./routes'));
@@ -79,6 +93,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
 
 
 
