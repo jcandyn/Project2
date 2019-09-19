@@ -1,24 +1,21 @@
-<!-- views/partials/header.ejs -->
-
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-    
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">
-                <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
-                Hive Builder
-            </a>
-    
-            <ul class="nav navbar-nav">
-                <li><a href="/members">Account</a></li>
-                <li><a href="/signUp">Sign Up page</a></li>
-                <li><a href="/login">Login page</a></li>
-                <li><a href="/create">Create</a></li>
+<header>
+    <nav role="navigation">
+        <ul class="navbar">
+            <li id="logo">
+                hive builder
             </li>
-            <li><a href="/all">All Events</a></li>
-            </ul>
-        </div>
-    
-    </div>
-    
+            <li id="searchBar">
+                <form action="API ROUTE">
+                    <input type="text" placeholder="Search Events">
+                    <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            <li class="push"><a class="navText" href="/members">Account</a></li>
+            <li><a class="navText" href="/create">Create Event</a></li>
+            <li><a class="navText" href="/all">All Events</a></li>
+            <li><a class="navText" href="/signUp">Sign Up</a></li>
+            <li><a class="navText" href="/login">Login</a></li>
+            </li>
+        </ul>
     </nav>
+</header>
