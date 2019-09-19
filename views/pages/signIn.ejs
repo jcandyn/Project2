@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <% include ../partials/head.ejs %>
+    
+    <title>hive builder</title>
+</head>
+
+<body>
+    <!-- <% include ../partials/header.ejs %> -->
+    <div class="container">
+        <div class="signUpContainer">
+            <!-- <div class="formContainer"> -->
+                <form class="formContent">
+                    <div id="usernameLogForm">
+                        <label for="username">Username</label>
+                        <input type="text" id="usernameLog" name="userName" placeholder="Username">
+                    </div>
+                    <div id="passLogForm">
+                        <label for="passwordEntry">Password </label>
+                        <input type="password" name="passwordEntry" autocomplete="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit" id="logInBtn">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>

@@ -31,7 +31,6 @@ var passport = require("./config/passport");
 
 // });
 
-
 // app.get("/", function(req, res) {
 //   // If the user already has an account send them to the members page
 //   if (req.user) {
