@@ -48,7 +48,9 @@ module.exports = function(app) {
           res.render(path.join(__dirname, "../views/pages/all.ejs"));
         });
 
-     
+        app.get("/index", isAuthenticated, function(req, res) {
+          res.render(path.join(__dirname, "../views/pages/index.ejs"));
+        });
 }
 
 // router.get('/survey', (req, res) => {
