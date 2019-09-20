@@ -2,7 +2,7 @@
 var express = require("express");
 var db = require("./models");
 var path = require('path');
-var port = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 var session = require("express-session");
 var app = express();
 
@@ -56,9 +56,9 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(port, function() {
-    console.log("App listening on PORT " + port);
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
   });
 });
 
