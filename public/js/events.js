@@ -1,27 +1,23 @@
 $(document).ready(function () {
-    // This file just does a GET request to figure out which user is logged in
-    // and updates the HTML on the page
+//     // This file just does a GET request to figure out which user is logged in
+//     // and updates the HTML on the page
     
-    $.get("/api/user_data").then(function (data) {
-        userdata = data;
-        return userdata;
-    }).then(function(){
-        console.log(userdata);
-    });
+//     $.get("/api/user_data").then(function (data) {
+//         userdata = data;
+//         return userdata;
+//     }).then(function(){
+//         console.log(userdata);
+//     });
 
-    
-
-    
-
-
-
-
-
+  
     function createEvent(theEvent) {
-        $.post("/api/events", theEvent, function () {
+        $.post("/api/events", theEvent).then(function() {
             alert("Event Created!");
-        });
-    };
+        }).catch(function (err) {
+            console.log(err);
+          });
+        }
+
 
     function updateEvent(theEvent) {
         $.ajax({
@@ -57,34 +53,26 @@ $(document).ready(function () {
         createEvent(newEvent);
     });
 
-    $("#update").on("click", function (event) {
-        event.preventDefault();
+    // $("#update").on("click", function (event) {
+    //     event.preventDefault();
 
-        var updatedTitle = $("#update-title").val().trim();
-        var updatedDesc = $("#update-desc").val().trim();
-        var updatedCat = $("#update-category").val().trim();
-        var updatedLocation = $("#update-location").val().trim();
-        var updatedDate = $("#update-date").val().trim();
-        var updatedTime = $("#update-time").val().trim();
+    //     var updatedTitle = $("#update-title").val().trim();
+    //     var updatedDesc = $("#update-desc").val().trim();
+    //     var updatedCat = $("#update-category").val().trim();
+    //     var updatedLocation = $("#update-location").val().trim();
+    //     var updatedDate = $("#update-date").val().trim();
+    //     var updatedTime = $("#update-time").val().trim();
 
-        updatedEvent = {
-            title: updatedTitle,
-            description: updatedDesc,
-            category: updatedCat,
-            location: updatedLocation,
-            date: updatedDate,
-            time: updatedTime,
-            UserId: data.id
-        };
-        updateEvent(updatedEvent);
-    })
+    //     updatedEvent = {
+    //         title: updatedTitle,
+    //         description: updatedDesc,
+    //         category: updatedCat,
+    //         location: updatedLocation,
+    //         date: updatedDate,
+    //         time: updatedTime,
+    //         UserId: data.id
+    //     };
+    //     updateEvent(updatedEvent);
+    // })
 
-
-
-
-
-
-
-
-
-});
+    });
