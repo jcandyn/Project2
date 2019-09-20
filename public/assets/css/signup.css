@@ -57,3 +57,10 @@ label {
     margin-bottom: 5px; 
     font-size: 1.2rem;
 }
+
+.stickyFooter {
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
+    z-index: inherit;
+}
