@@ -44,7 +44,7 @@ module.exports = function(app) {
           res.render(path.join(__dirname, "../views/pages/create.ejs"));
         });
 
-        app.get("/all", isAuthenticated, function(req, res) {
+        app.get("/all", function(req, res) {
           res.render(path.join(__dirname, "../views/pages/all.ejs"));
         });
 
