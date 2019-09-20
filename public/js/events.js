@@ -6,13 +6,16 @@ $(document).ready(function () {
         userdata = data;
         return userdata;
     });
- 
+
 
     function createEvent(theEvent) {
-        $.post("/api/events", theEvent, function () {
+        $.post("/api/events", theEvent).then(function() {
             alert("Event Created!");
-        });
-    };
+        }).catch(function (err) {
+            console.log(err);
+          });
+        }
+
 
     function updateEvent(theEvent) {
         $.ajax({
@@ -50,6 +53,7 @@ $(document).ready(function () {
         createEvent(newEvent);
     });
 
+
     $("#update").on("click", function (event) {
         event.preventDefault();
 
@@ -73,3 +77,7 @@ $(document).ready(function () {
     })
 
 });
+
+
+    });
+
