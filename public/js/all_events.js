@@ -40,6 +40,7 @@ $(document).ready(function () {
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html("No events yet" + partial + ", navigate <a href='/create" + query +
+
       "'>here</a> in order to get started.");
     allEvents.append(messageH2);
   }

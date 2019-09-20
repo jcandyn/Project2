@@ -218,7 +218,14 @@ a:hover {
 
 #logo {
     font-size: 1.75rem;
-    color: #EFBF2D;
+    color: #EFBF2D !important;
+    text-decoration: none;
+}
+
+#logoLink {
+    font-size: 1.75rem;
+    color: #EFBF2D !important;
+    text-decoration: none;
 }
 * {
     box-sizing: border-box;
