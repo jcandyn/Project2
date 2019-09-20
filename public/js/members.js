@@ -1,7 +1,6 @@
 
 
 $(document).ready(function() {
-  let membersData;
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     $.get("/api/user_data").then(function(data) {
@@ -16,7 +15,6 @@ $(document).ready(function() {
         $("#logOutLink").remove()
       }
       $(".member-name").text(data.name);
-      membersData = data
     });
   });
 
