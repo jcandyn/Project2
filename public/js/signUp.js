@@ -11,13 +11,15 @@ $(document).ready(function() {
         nameSign_up = $("#nameSign_up").val().trim()
         emailSign_up = $("#emailSign_up").val().trim()
         passwordSign_up = $("#passwordSign_up").val().trim()
+
+        var randomID = Math.floor(Math.random() * 2000000000) + 1000000000;
     
         var user_data = {
             username: usernameSign_up,
             name: nameSign_up,
             email: emailSign_up,
             password: passwordSign_up,
-            user_identifier: 1234567891
+            user_identifier: randomID
         }
     
         if (!user_data.username || !user_data.password) {
@@ -55,4 +57,6 @@ $(document).ready(function() {
       $("#alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
     }
-    });
+});
+
+

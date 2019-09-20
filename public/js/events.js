@@ -1,9 +1,17 @@
 $(document).ready(function () {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
+    
     $.get("/api/user_data").then(function (data) {
-        console.log(data)
+        userdata = data;
+        return userdata;
+    }).then(function(){
+        console.log(userdata);
     });
+
+    
+
+    
 
 
 
@@ -44,7 +52,7 @@ $(document).ready(function () {
             location: newEventLocation,
             date: newEventDate,
             time: newEventTime,
-            UserId: 1234567890
+            UserId: userdata.id
         };
         createEvent(newEvent);
     });
@@ -66,7 +74,7 @@ $(document).ready(function () {
             location: updatedLocation,
             date: updatedDate,
             time: updatedTime,
-            UserId: data.username
+            UserId: data.id
         };
         updateEvent(updatedEvent);
     })

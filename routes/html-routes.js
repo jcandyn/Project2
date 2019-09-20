@@ -34,7 +34,7 @@ module.exports = function(app) {
         });
 
         app.get("/signUp", function(req, res) {
-          res.render(path.join(__dirname, "../views/pages/signUp.ejs"));
+          res.render(path.join(__dirname, "../views/pages/signup.ejs"));
         });
 
         // app.get("/createEvent", function(req, res) {
@@ -44,11 +44,13 @@ module.exports = function(app) {
           res.render(path.join(__dirname, "../views/pages/create.ejs"));
         });
 
-        app.get("/all", isAuthenticated, function(req, res) {
+        app.get("/all", function(req, res) {
           res.render(path.join(__dirname, "../views/pages/all.ejs"));
         });
 
-     
+        app.get("/index", isAuthenticated, function(req, res) {
+          res.render(path.join(__dirname, "../views/pages/index.ejs"));
+        });
 }
 
 // router.get('/survey', (req, res) => {

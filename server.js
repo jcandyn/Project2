@@ -31,7 +31,6 @@ var passport = require("./config/passport");
 
 // });
 
-
 // app.get("/", function(req, res) {
 //   // If the user already has an account send them to the members page
 //   if (req.user) {
@@ -50,10 +49,10 @@ app.get("/", function(req, res) {
   if (req.user) {
     res.redirect("/members");
   }
+
   // res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
 
-  res.render(path.join(__dirname, "../Project2/views/pages/signUp.ejs"));
-
+  res.render(path.join(__dirname, "../Project2/views/pages/index.ejs"));
 });
 
 //
