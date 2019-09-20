@@ -5,17 +5,8 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         userdata = data;
         return userdata;
-    }).then(function(){
-        console.log(userdata);
     });
-
-    
-
-    
-
-
-
-
+ 
 
     function createEvent(theEvent) {
         $.post("/api/events", theEvent, function () {
@@ -29,7 +20,8 @@ $(document).ready(function () {
             url: "/api/events",
             data: theEvent
         }).then(function (result) {
-            console.log(result);
+            result.end();
+            location.reload();
         });
     };
 
@@ -54,6 +46,7 @@ $(document).ready(function () {
             time: newEventTime,
             UserId: userdata.id
         };
+        
         createEvent(newEvent);
     });
 
@@ -74,17 +67,9 @@ $(document).ready(function () {
             location: updatedLocation,
             date: updatedDate,
             time: updatedTime,
-            UserId: data.id
+            UserId: userdata.id
         };
         updateEvent(updatedEvent);
     })
-
-
-
-
-
-
-
-
 
 });
