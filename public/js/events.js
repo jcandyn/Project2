@@ -5,11 +5,9 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         userdata = data;
         return userdata;
-    }).then(function(){
-        console.log(userdata);
     });
 
-  
+
     function createEvent(theEvent) {
         $.post("/api/events", theEvent).then(function() {
             alert("Event Created!");
@@ -25,7 +23,8 @@ $(document).ready(function () {
             url: "/api/events",
             data: theEvent
         }).then(function (result) {
-            console.log(result);
+            result.end();
+            location.reload();
         });
     };
 
@@ -50,29 +49,35 @@ $(document).ready(function () {
             time: newEventTime,
             UserId: userdata.id
         };
+        
         createEvent(newEvent);
     });
 
-    // $("#update").on("click", function (event) {
-    //     event.preventDefault();
 
-    //     var updatedTitle = $("#update-title").val().trim();
-    //     var updatedDesc = $("#update-desc").val().trim();
-    //     var updatedCat = $("#update-category").val().trim();
-    //     var updatedLocation = $("#update-location").val().trim();
-    //     var updatedDate = $("#update-date").val().trim();
-    //     var updatedTime = $("#update-time").val().trim();
+    $("#update").on("click", function (event) {
+        event.preventDefault();
 
-    //     updatedEvent = {
-    //         title: updatedTitle,
-    //         description: updatedDesc,
-    //         category: updatedCat,
-    //         location: updatedLocation,
-    //         date: updatedDate,
-    //         time: updatedTime,
-    //         UserId: data.id
-    //     };
-    //     updateEvent(updatedEvent);
-    // })
+        var updatedTitle = $("#update-title").val().trim();
+        var updatedDesc = $("#update-desc").val().trim();
+        var updatedCat = $("#update-category").val().trim();
+        var updatedLocation = $("#update-location").val().trim();
+        var updatedDate = $("#update-date").val().trim();
+        var updatedTime = $("#update-time").val().trim();
+
+        updatedEvent = {
+            title: updatedTitle,
+            description: updatedDesc,
+            category: updatedCat,
+            location: updatedLocation,
+            date: updatedDate,
+            time: updatedTime,
+            UserId: userdata.id
+        };
+        updateEvent(updatedEvent);
+    })
+
+});
+
 
     });
+
