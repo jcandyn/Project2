@@ -98,7 +98,7 @@ $(document).ready(function () {
     // mainContainer.append(cardGroup)
 
 
-    var altTestCard = '<div class="card"><img src="https://ak8.picdn.net/shutterstock/videos/3635288/thumb/1.jpg" style="width: 213px" style="height: 100px" class="card-img-top" alt="#"><div class="card-body"><h5 class="card-title event-title">' + x.title + '</h5><br><p class="card-text event-desc">'+x.description+'</p><br><p class="card-text event-deets">Location: '+x.location+'</p><p class="card-text event-deets">Date: '+x.date+'</p><p class="card-text event-deets">Time: '+x.time+'</p></div></div>';
+    var altTestCard = '<div class="card main"><img src="https://ak8.picdn.net/shutterstock/videos/3635288/thumb/1.jpg" style="width: 213px" style="height: 100px" class="card-img-top" alt="#"><div class="card-body"><h5 class="card-title event-title">' + x.title + '</h5><br><p class="card-text event-desc">'+x.description+'</p><br><p class="card-text event-deets">Location: '+x.location+'</p><p class="card-text event-deets">Date: '+x.date+'</p><p class="card-text event-deets">Time: '+x.time+'</p></div></div>';
 
     mainContainer.append(altTestCard);
   }
