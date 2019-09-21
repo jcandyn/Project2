@@ -25,6 +25,11 @@
   height: 50px;
 }
 
+#harold{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /* .writing{
     top: 60px;
     left: 100px;
