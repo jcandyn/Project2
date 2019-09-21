@@ -20,7 +20,7 @@ app.get("/", function(req, res) {
 
   // res.sendFile(path.join(__dirname, "../Project2/public/signUp.html"));
 
-  res.render(path.join(__dirname, "../Project2/views/pages/index.ejs"));
+  res.render(path.join(__dirname, "/views/pages/index.ejs"));
 });
 
 //
