@@ -1,37 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<% include ../partials/head %>
+<% include ../partials/head.ejs %>
 <title>Create Event</title>
-<html>
 
 <body>
+
     <% include ../partials/header.ejs %>
 
-    <div id="eventForm">
-        <form class="form">
-            <div id="eventTitle_form">
+    <div class="fixBlock">
+        <h1 id="headerFont"> Now let's make some buzz !!</h1>
+        <form>
+            <div class="form-group" id="eventTitle_form">
                 <label for="event-title">Title</label>
-                <input type="text" id="event-title" aria-describedby="emailHelp"
+                <input type="text" class="form-control" id="event-title" aria-describedby="emailHelp"
                     placeholder="Make a cool name for your event!">
             </div>
-            <div id="eventTime_form">
-                <label for="event-time">Time</label>
-                <input type="text" id="event-time" aria-describedby="emailHelp"
+
+            <div class="form-group" id="eventTime_form">
+                <label for="event-time">Time:</label>
+                <input type="text" class="form-control" id="event-time" aria-describedby="emailHelp"
                     placeholder="What time will the event be held?">
             </div>
-            <div id="eventLocation_form">
-                <label for="event-location">Location</label>
-                <input type="text" id="event-location" aria-describedby="emailHelp" placeholder="Address of event">
+
+            <div class="form-group" id="eventLocation_form">
+                <label for="event-location">Location:</label>
+                <input type="text" class="form-control" id="event-location" aria-describedby="emailHelp"
+                    placeholder="Address">
             </div>
-            <div>
-                <label for="event-desc">Description</label>
-                <textarea id="event-desc" rows="3"
-                    placeholder="In order to churn up some buzz, tell uswhat the event is about."></textarea>
+
+            <div class="form-group">
+                <label for="event-desc">Description:</label>
+                <textarea class="form-control" id="event-desc" rows="3"></textarea>
             </div>
-            <div>
-                <label for="event-category">Event Category</label>
-                <select id="event-category">
+
+            <div class="form-group">
+                <label for="event-category">Category:</label>
+                <select class="form-control" id="event-category">
                     <option>Volunteer</option>
                     <option>Education</option>
                     <option>Charity</option>
@@ -39,11 +43,15 @@
                     <option>Sports</option>
                 </select>
             </div>
-            <div>
-                <label for="event-date">Date</label>
-                <input type="text" id="event-date" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+
+            <div class="form-group">
+                <label for="event-date">Date:</label>
+                <input type="text" class="form-control" id="event-date" aria-describedby="emailHelp"
+                    placeholder="mm/dd/yyyy">
             </div>
-            <button type="button" id="submit">Create Event</button>
+
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 </body>
