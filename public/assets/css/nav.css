@@ -33,6 +33,7 @@ a:hover {
 
 #logo {
     font-size: 1.75rem;
+    margin-right: 5px;
     color: #EFBF2D !important;
     text-decoration: none;
 }
