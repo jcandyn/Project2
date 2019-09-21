@@ -23,12 +23,12 @@ The Hive Builder app was designed to create an operational site where members ca
 
 ### Team 
 
-## Back - End Team:
+#### Back - End Team:
 
 - [Joscandy Nunez] (https://github.com/jcandyn)
 - [Colin McMahon] (https://github.com/CMcM24)
 
-## Front - End Team:
+#### Front - End Team:
 
 - [Lindsay Iveson] (https://github.com/lindsive)
 - [Jennifer Kim] (https://github.com/jk1138)
@@ -36,5 +36,5 @@ The Hive Builder app was designed to create an operational site where members ca
 
 ### Checkout Our Site
 
-# https://beehiveproject2.herokuapp.com/
-![hive-builder-demo](./assets/images/demo.gif)
+##### https://beehiveproject2.herokuapp.com/
+![hive-builder-demo](Project2/public/assets/images/demo.gif)
