@@ -63,3 +63,8 @@ li {
     color: #140c07;
 }
 
+#membersPage {
+    background-image: url("/images/modal/goodmodal.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
