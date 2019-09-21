@@ -25,11 +25,10 @@
   height: 50px;
 }
 
-.writing{
-    position: absolute;
+/* .writing{
     top: 60px;
     left: 100px;
-}
+} */
 
 #icons {
   text-align: center;
@@ -43,8 +42,19 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  #sectionOne {
+    height: 600px;
+    background-color: #130C07;
+  }   
+  #banner{
+    display:none;
+  }
   #beegif {
-    position: fixed;
-  
-    right: 90px;
+    position: absolute;
+    top: 300px;
+    bottom: 4px;
+    right: 0px;
+    width: 300px;
+    height: 300px;
+  }
 }
