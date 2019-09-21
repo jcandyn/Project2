@@ -4,37 +4,29 @@
 <html lang="en">
 
 <head>
-    <% include ../partials/head %>
+  <% include ../partials/head %>
 </head>
 
 <body class="container">
 
-    <header>
-        <% include ../partials/header %>
-    </header>
-
-    <main>
-            <div class="container">
-              <div class="row justify-content-center">
-                <h2>Welcome <span class="member-name"></span></h2>
-                <h3 class="nextStep">  Now let's start making some buzz...</h3>
-              </div>
-              <div class="welcome-body" style="text-align: center">
-                <img src="/images/modal/goodmodal.gif" alt="happy bees" >
-              </div>
-            </div>
-            <h2>Your Events</h2>
+  <main>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h2>Welcome <span class="member-name"></span></h2>
+        <h3 class="nextStep"> Now let's start making some buzz...</h3>
+      </div>
+      <div class="welcome-body">
+        <img src="/images/modal/goodmodal.gif" alt="happy bees">
+      </div>
+    </div>
+    
+         <h2>Your Events</h2>
             <br>
             <div class="card-columns" id="your_events"></div>
-          
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script type="text/javascript" src="js/members.js"></script>
 
     <footer>
         <% include ../partials/footer %>
     </footer>
-
 </body>
 
 </html>
-

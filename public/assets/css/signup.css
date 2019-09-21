@@ -6,6 +6,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
+    
 }
 
 .alignGridWrapper {
@@ -33,15 +34,15 @@
 
 }
 
-form, input, label {
+input, label {
     text-align: left;
     display: flex;
     width: 300px;
-} 
+}  
 
 input {
     padding: 10px;
-}
+} 
 
 .center {
     text-align: center;
@@ -50,13 +51,13 @@ input {
 
 form {
     font-size: 1rem;
-}
+} 
 
 label {
     margin-top: 20px;
     margin-bottom: 5px; 
     font-size: 1.2rem;
-}
+} 
 
 .stickyFooter {
     position: relative;
