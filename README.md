@@ -37,4 +37,4 @@ The Hive Builder app was designed to create an operational site where members ca
 ### Checkout Our Site
 
 # https://beehiveproject2.herokuapp.com/
-![hive-builder-demo](./assets/images/demo.gif)
+![hive-builder-demo](./screenshots/demo.gif)
