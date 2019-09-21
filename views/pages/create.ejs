@@ -1,66 +1,51 @@
-<head>
-    <% include ../partials/head %>
-    <title>Create Event</title>
-</head>
 
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<% include ../partials/head %>
+<title>Create Event</title>
+<html>
 
 <body>
-
     <% include ../partials/header.ejs %>
-    
+
     <div id="eventForm">
-        <div>
-        </div>
-        <form id="form" action="get">
-            <div class="alignGridWrapper center">
-                    <h1>Now lets create some buzz!</h1>
-                <div id="eventTitle_form">
-                    <label for="event-title">Title</label>
-                    <input type="text" class="name" id="event-title" aria-describedby="emailHelp"
-                        placeholder="Make a cool name for your event!">
-                </div>
-                <div id="eventTime_form">
-                    <label for="event-time">Time</label>
-                    <input type="text" id="event-time" aria-describedby="emailHelp"
-                        placeholder="What time will the event be held?">
-                </div>
-                <div id="eventLocation_form">
-                    <label for="event-location">Location</label>
-                    <input type="text" id="event-location" aria-describedby="emailHelp"
-                        placeholder="Address of your event">
-                </div>
-                <div>
-                    <label for="event-desc">Description</label>
-                    <textarea id="event-desc" rows="3"
-                        placeholder="In order to churn up some buzz, tell us what the event is about."></textarea>
-                </div>
-                <div>
-                    <label for="event-category">Category</label>
-                    <select id="event-category">
-                        <option>Volunteer</option>
-                        <option>Education</option>
-                        <option>Charity</option>
-                        <option>Party</option>
-                        <option>Sports</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="event-date">Date</label>
-                    <input type="text" id="event-date" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
-                </div>
-                <div class="center">
-                    <button type="submit" id="signUpBtn">Submit <i class="fab fa-forumbee"></i></button>
-                </div>
+        <form class="form">
+            <div id="eventTitle_form">
+                <label for="event-title">Title</label>
+                <input type="text" id="event-title" aria-describedby="emailHelp"
+                    placeholder="Make a cool name for your event!">
             </div>
+            <div id="eventTime_form">
+                <label for="event-time">Time</label>
+                <input type="text" id="event-time" aria-describedby="emailHelp"
+                    placeholder="What time will the event be held?">
+            </div>
+            <div id="eventLocation_form">
+                <label for="event-location">Location</label>
+                <input type="text" id="event-location" aria-describedby="emailHelp" placeholder="Address of event">
+            </div>
+            <div>
+                <label for="event-desc">Description</label>
+                <textarea id="event-desc" rows="3"
+                    placeholder="In order to churn up some buzz, tell uswhat the event is about."></textarea>
+            </div>
+            <div>
+                <label for="event-category">Event Category</label>
+                <select id="event-category">
+                    <option>Volunteer</option>
+                    <option>Education</option>
+                    <option>Charity</option>
+                    <option>Party</option>
+                    <option>Sports</option>
+                </select>
+            </div>
+            <div>
+                <label for="event-date">Date</label>
+                <input type="text" id="event-date" aria-describedby="emailHelp" placeholder="mm/dd/yyyy">
+            </div>
+            <button type="button" id="submit">Create Event</button>
         </form>
     </div>
-    <!-- <footer> <% include ../partials/footer %>
-    </footer> -->
-    <script src="js/signUp.js"></script>
-
 </body>
 
 </html>
