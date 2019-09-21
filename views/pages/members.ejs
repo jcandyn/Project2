@@ -9,10 +9,6 @@
 
 <body class="container">
 
-  <header>
-    <% include ../partials/header %>
-  </header>
-
   <main>
     <div class="container">
       <div class="row justify-content-center">
@@ -23,11 +19,14 @@
         <img src="/images/modal/goodmodal.gif" alt="happy bees">
       </div>
     </div>
+    
+         <h2>Your Events</h2>
+            <br>
+            <div class="card-columns" id="your_events"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
-
-
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
 </body>
 
 </html>
