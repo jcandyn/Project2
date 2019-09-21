@@ -34,7 +34,7 @@ module.exports = function(app) {
         });
 
         app.get("/signUp", function(req, res) {
-          res.render(path.join(__dirname, "../views/pages/signup.ejs"));
+          res.render(path.join(__dirname, "../views/pages/signUp.ejs"));
         });
 
         // app.get("/createEvent", function(req, res) {
