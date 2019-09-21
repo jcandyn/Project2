@@ -1,5 +1,11 @@
+
 /* .event-title {
- font-size: 20pts;
+
+.card-img-top {
+    width: 100%;
+    height: 8vw;
+    object-fit: cover;
+    font-size: 20pts;
 }
 
 .event-desc {
