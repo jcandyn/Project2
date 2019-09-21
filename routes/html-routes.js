@@ -12,7 +12,7 @@ module.exports = function(app) {
             res.redirect("/members");
           }
 
-          res.render(path.join(__dirname, "../views/pages/index.ejs"));
+          res.render(path.join(__dirname, "/views/pages/index.ejs"));
 
         });
       
@@ -21,7 +21,7 @@ module.exports = function(app) {
           if (req.user) {
             res.redirect("/members");
           }
-          res.render(path.join(__dirname, "../views/pages/login.ejs"));
+          res.render(path.join(__dirname, "/views/pages/login.ejs"));
 
           // res.sendFile(path.join(__dirname, "../public/login.html"));
         });
@@ -30,22 +30,22 @@ module.exports = function(app) {
         // If a user who is not logged in tries to access this route they will be redirected to the signup page
         app.get("/members", isAuthenticated, function(req, res) {
           // res.sendFile(path.join(__dirname, "../public/members.html"));
-           res.render(path.join(__dirname, "../views/pages/members.ejs"));
+           res.render(path.join(__dirname, "/views/pages/members.ejs"));
         });
 
         app.get("/signUp", function(req, res) {
-          res.render(path.join(__dirname, "../views/pages/signup.ejs"));
+          res.render(path.join(__dirname, "/views/pages/signup.ejs"));
         });
 
         // app.get("/createEvent", function(req, res) {
         //   res.render(path.join(__dirname, "../views/pages/createEvent.ejs"));
 
          app.get("/create", isAuthenticated, function(req, res) {
-          res.render(path.join(__dirname, "../views/pages/create.ejs"));
+          res.render(path.join(__dirname, "/views/pages/create.ejs"));
         });
 
         app.get("/all", function(req, res) {
-          res.render(path.join(__dirname, "../views/pages/all.ejs"));
+          res.render(path.join(__dirname, "/views/pages/all.ejs"));
         });
 
         // app.get("/index", isAuthenticated, function(req, res) {
