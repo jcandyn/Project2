@@ -1,4 +1,4 @@
-# Project2 - Hive Builder
+#Hive Builder
 
 ## Overview
 This was our second large project as a group. We had to utilize both the knowledge of front-end coding and back-ending coding we have acquired during our time in the bootcamp program at Rutgers. In this app, we wanted to create a sister app to our previous project where users can create and manage events instead of making api calls to a pre-packaged API JSON. Instead we utilized passport.js and sequelize in order to create members and these members can then create events for other members to find.  
