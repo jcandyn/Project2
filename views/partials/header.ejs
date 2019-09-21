@@ -1,39 +1,22 @@
-
-
-
-
-
 <header>
-    <a href="#main-menu" class="menu-toggle" id="main-menu-toggle" aria-label="Open main menu">
-        <span class="sr-only">Open main menu</span>
-        <span class="fa fa-bars"></span>
-    </a>
-    <nav role="navigation" id="main-menu" class="main-menu"aria-label="Main menu">
-        <a href="#main-menu-toggle" class="menu-close" id="main-menu-close" aria-label="Close main menu">
-                <span class="sr-only">Close main menu</span>
-            <span class="fa fa-close"></span>
-        </a>
+    <nav role="navigation" id="main-menu" class="main-menu" aria-label="Main menu">
         <ul class="navbar">
-            <li id="logo"><a href="/" id="logoLink">
-                hive builder
-            </a>
+            <li id="logo">hive builder<a href="/" id="logoLink">
+                </a>
             </li>
             <li id="searchBar">
-                <form action="API ROUTE">
-                    <input type="text" placeholder="Search Events">
-                    <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
-                </form>
+                <input type="text" placeholder="Search Events">
+                <button id="searchButton" type="submit"><i class="fas fa-search"></i></button>
             </li>
-            <li  id="accountLink" class="push"><a class="navText" href="/members">Account</a></li>
+            <li id="accountLink" class="push"><a class="navText" href="/members">Account</a></li>
             <li id="createEventLink"><a class="navText" href="/create">Create Event</a></li>
             <li><a class="navText" href="/all">All Events</a></li>
             <li id="signUpLink"><a class="navText" href="/signUp">Sign Up</a></li>
             <li id="loginLink"><a class="navText" href="/login">Login</a></li>
             </li>
             <li id="logOutLink"><a class="navText" href="/logout">Log Out</a></li>
-        </li>
+            </li>
         </ul>
     </nav>
-    <a href="#main-menu-toggle" class="backdrop" tabindex="-1"
-    aria-hidden="true" hidden></a>
+    <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
 </header>
