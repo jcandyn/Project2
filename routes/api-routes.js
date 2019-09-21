@@ -77,10 +77,10 @@ module.exports = function (app) {
         });
     });
 
-    app.get("/api/events/:username", function (req, res) {
+    app.get("/api/events/:userId", function (req, res) {
         db.Event.findAll({
             where: {
-                username: req.params.username
+                userId: req.params.userId
             },
             include: [db.User]
         }).then(function (dbEvent) {

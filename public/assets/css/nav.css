@@ -33,6 +33,7 @@ a:hover {
 
 #logo {
     font-size: 1.75rem;
+    margin-right: 5px;
     color: #EFBF2D !important;
     text-decoration: none;
 }
@@ -62,4 +63,8 @@ li {
     color: #140c07;
 }
 
-
+#membersPage {
+    background-image: url("/images/modal/goodmodal.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
